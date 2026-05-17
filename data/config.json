@@ -1,0 +1,49 @@
+{
+  "ai": {
+    "provider": "openai",
+    "model": "deepseek-v4-pro",
+    "api_key_env": "DEEPSEEK_API_KEY",
+    "base_url": "https://api.deepseek.com",
+    "throttle_sec": 0
+  },
+  "sources": {
+    "rss": [
+      {
+        "name": "Simon Willison",
+        "url": "https://simonwillison.net/atom/everything/",
+        "enabled": true
+      }
+    ],
+    "github": [
+      {
+        "type": "user_events",
+        "username": "gvanrossum",
+        "enabled": true
+      },
+      {
+        "type": "repo_releases",
+        "owner": "python",
+        "repo": "cpython",
+        "enabled": true
+      }
+    ],
+    "hackernews": {
+      "enabled": true,
+      "fetch_top_stories": 30,
+      "min_score": 100
+    },
+    "twitter": {
+      "enabled": true,
+      "users": ["karpathy", "ylecun"],
+      "fetch_limit": 10,
+      "fetch_reply_text": false,
+      "max_replies_per_tweet": 3,
+      "max_tweets_to_expand": 10,
+      "reply_min_likes": 5
+    },
+  },
+  "filtering": {
+    "ai_score_threshold": 6.0,
+    "time_window_hours": 24
+  }
+}
